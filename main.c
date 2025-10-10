@@ -1,41 +1,36 @@
 #include <stdio.h>
-#include <string.h>
+#include <math.h>
 
 int main(){
-     char noun[50] = "";
-     char verb[50] = "";
-     char adjective1[50] = "";
-     char adjective2[50] = "";
-     char adjective3[50] = "";
+     int choice = 0;
+     float pounds = 0.0f;
+     float kilograms = 0.0f;
 
-     printf("Enter an adjective (description): ");
-     fgets(adjective1, sizeof(adjective1), stdin);
-     adjective1[strlen(adjective1) - 1] = '\0'; // Remove newline character
 
-     printf("Enter a noun (person, place, or thing): ");
-     fgets(noun, sizeof(noun), stdin);
-     noun[strlen(noun) - 1] = '\0'; // Remove newline character
+     printf("Weight conversion calculator\n");
+     printf("1. Kilograms to Pounds\n");
+     printf("2. Pounds to Kilograms\n");
+     printf("Enter your choice (1 or 2): ");
+     scanf("%d", &choice);
 
-     printf("Enter an adjective (description): ");
-     fgets(adjective2, sizeof(adjective2), stdin);
-     adjective2[strlen(adjective2) - 1] = '\0'; // Remove newline character
+     if(choice == 1){
+          // KILOGRAMS TO POUNDS
+          printf("Enter the weight in Kilograms: ");
+          scanf("%f", &kilograms);
+          pounds = kilograms * 2.20462;
+          printf("Your weight of %.2fkg is %.2f in pounds", kilograms, pounds);
+     }
+     else if(choice == 2){
+          //POUNDS TO KILOGRAMS
+          printf("Enter the weight in Pounds: ");
+          scanf("%f", &pounds);
+          kilograms = pounds / 2.20462;
+          printf("%.2f pounds is equal to %.2f kilograms\n", pounds, kilograms);
+     }
+     else{
+          printf("Invalid choice! Please enter 1 or 2\n");
+     }
 
-     printf("Enter a verb (ending with-ing): ");
-     fgets(verb, sizeof(verb), stdin);
-     verb[strlen(verb) - 1] = '\0'; // Remove newline character
 
-     printf("Enter an adjective (description): ");
-     fgets(adjective3, sizeof(adjective3), stdin);
-     adjective3[strlen(adjective3) - 1] = '\0'; // Remove newline character
-
-     printf("%s\n", noun);
-     printf("%s\n", verb);
-     printf("%s\n", adjective1);
-     printf("%s\n", adjective2);
-     printf("%s\n", adjective3);
-     printf("Today I went to a %s zoo.\n", adjective1);
-     printf("In an exhibit i saw a %s.\n", noun);
-     printf("%s was %s and %s!. \n", noun, adjective2, verb);
-     printf("I was %s.\n", adjective3);
      return 0;
 }
