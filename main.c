@@ -1,36 +1,33 @@
 #include <stdio.h>
-#include <math.h>
 
 int main(){
-     int choice = 0;
-     float pounds = 0.0f;
-     float kilograms = 0.0f;
-
-
-     printf("Weight conversion calculator\n");
-     printf("1. Kilograms to Pounds\n");
-     printf("2. Pounds to Kilograms\n");
-     printf("Enter your choice (1 or 2): ");
-     scanf("%d", &choice);
-
-     if(choice == 1){
-          // KILOGRAMS TO POUNDS
-          printf("Enter the weight in Kilograms: ");
-          scanf("%f", &kilograms);
-          pounds = kilograms * 2.20462;
-          printf("Your weight of %.2fkg is %.2f in pounds", kilograms, pounds);
+     int day = 0;
+     printf("Enter your day: ");
+     scanf("%d", &day);
+     switch(day){
+          case 1:
+              printf("It's Monday!.");
+              break;
+          case 2:
+              printf("It's Tuesday!");
+              break;
+          case 3:
+              printf("It's Wednesday!");
+              break;
+          case 4:
+              printf("It's Thursday!");
+              break;
+          case 5:
+              printf("It's Friday!");
+              break;
+          case 6:
+              printf("It's Saturday!");
+              break;
+          case 7:
+              printf("It's Sunday!");
+              break;
+          default:
+               printf("Please only enter a number (1 - 7): ");
      }
-     else if(choice == 2){
-          //POUNDS TO KILOGRAMS
-          printf("Enter the weight in Pounds: ");
-          scanf("%f", &pounds);
-          kilograms = pounds / 2.20462;
-          printf("%.2f pounds is equal to %.2f kilograms\n", pounds, kilograms);
-     }
-     else{
-          printf("Invalid choice! Please enter 1 or 2\n");
-     }
-
-
      return 0;
 }
