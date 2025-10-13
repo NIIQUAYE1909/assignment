@@ -1,21 +1,14 @@
 #include <stdio.h>
-#include <string.h>
+#include <windows.h>
 
 
 int main(){
 
-     char name[50] = "";
-     printf("Enter your name: ");
-     fgets(name, sizeof(name), stdin);
-     name[strlen(name) - 1] = '\0';
-
-     while(strlen(name) == 0){
-          printf("Name cannot be empty! Please enter your name: ");
-          fgets(name, sizeof(name), stdin);
-          name[strlen(name) - 1] = '\0';
+     for(int i = 10; i >= 0; i--){
+          Sleep(1000);
+          printf("%d\n", i);
      }
-
-     printf("Hello %s", name);
+     printf("\nHappy new year\n");
 
      return 0;
 }
