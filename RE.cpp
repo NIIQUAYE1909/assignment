@@ -1,15 +1,23 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
-int sum(int a, int b){
-     return a + b;
-}
 
 
 int main(){
-     int a, b;
-     cout << "Enter your numbers: " << endl;
-     cin >> a >> b;
-     cout << sum(a, b);
+
+     int a;
+
+     do{
+          cout << "Enter your number: ";
+          cin >> a;
+          if(a % 2 == 0){
+               cout << a << " is even." << endl;
+          }
+          else{
+               cout << a << " is odd." << endl;
+          }
+     }while(a != 5);
+     
      return 0;
 }
